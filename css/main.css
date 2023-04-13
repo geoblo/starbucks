@@ -6,17 +6,24 @@ body {
   line-height: 1.4;
   color: #333;
   /* 위 속성들은 모두 상속되기에 전체 스타일을 한번에 제어 */
+
+  height: 3000px;
 }
 
 a {
   text-decoration: none;
 }
 
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+
 .inner {
   /* 가로 너비를 가진 블록 요소에 margin: 0 auto; 를 줄 경우, 부모 범위 안에서 가운데 정렬 */
-  width: 1100px;
+  /* width: 1100px; */
   /* 반응형으로 작업하고 싶다면? */
-  /* max-width: 1100px; */
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
 }
@@ -27,6 +34,11 @@ header {
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
 
+  /* 고정된 헤더 만들기 */
+  width: 100%;
+  position: fixed; /* 가로 너비를 지정하지 않으면 최소한으로 줄어드려고 함 */
+  top: 0;
+  z-index: 9;
 }
 header > .inner {
   height: 120px;
@@ -188,6 +200,21 @@ header .main-menu .item .item__contents .contents__texture p {
   margin: 4px 0 14px;
 }
 
+header .badges {
+  /* fixed 써도 상관없음 */
+  /* position: fixed; */
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  /* x축거리, y축거리, 흐림처리(blur) 범위, 확대/축소(spread) 범위, 색상  */
+  box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, .15);
+  cursor: pointer;
+}
 
 
 
