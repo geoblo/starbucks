@@ -31,9 +31,20 @@ window.addEventListener('scroll', function () {
   // 그렇지 않으면 다시 보이기!!
   if (window.scrollY > 500) {
     // 배지 요소 숨기기!
-    badgeEl.style.display = 'none';
+    // badgeEl.style.display = 'none';
+
+    // gsap.to(요소, 지속시간, 옵션: {}) 메소드: CSS 속성을 통해 애니메이션 처리
+    gsap.to(badgeEl, 0.6, {
+      opacity: 0,
+      display: 'none'
+    });
   } else {
     // 배지 요소 보이기!
-    badgeEl.style.display = 'block';
+    // badgeEl.style.display = 'block';
+
+    gsap.to(badgeEl, 0.6, {
+      opacity: 1,
+      display: 'block'
+    });
   }
 });

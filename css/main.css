@@ -7,7 +7,6 @@ body {
   color: #333;
   /* 위 속성들은 모두 상속되기에 전체 스타일을 한번에 제어 */
 
-  height: 3000px;
 }
 
 a {
@@ -216,7 +215,52 @@ header .badges .badge {
   cursor: pointer;
 }
 
-
-
+/* VISUAL */
+.visual {
+  /* 헤더가 fixed 되어 일반 배치 흐름에서 벗어남(주변 요소들과 상호작용하지 않음) */
+  /* 헤더의 높이만큼 외부 여백 추가 */
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner {
+  height: 646px;
+  background-color: orange;
+}
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
 
 
