@@ -27,6 +27,63 @@ img {
   position: relative;
 }
 
+/* 전역 버튼 스타일 */
+/* 버튼과 같이 여러 곳에서 반복 사용되는 요소를 공통 스타일로 작업하면, 매번 다시 작성할 필요가 없음 */
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 미리 블록으로 지정 */
+  transition: .4s;
+
+  /* (참고) 커서 모양 커스텀 가능 */
+  /* cursor: url("https://blog.kakaocdn.net/dn/BQXpN/btq3qNR67Lg/8tx8tGzkOcr5BuX5dyIaKk/img.png") 58 58, auto; */
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--brown {
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+.btn.btn--reverse {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--gold {
+  color: #d9aa8a;
+  border-color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #d9aa8a;
+}
+.btn.btn--white {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+
 /* HEADER */
 header {
   /* background-color: royalblue; */
@@ -225,7 +282,7 @@ header .badges .badge {
 }
 .visual .inner {
   height: 646px;
-  background-color: orange;
+  /* background-color: orange; */
 }
 .visual .title {
   position: absolute;
