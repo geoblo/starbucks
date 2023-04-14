@@ -371,6 +371,14 @@ header .badges .badge {
   height: 62px;
   flex-grow: 1; /* 여기서는 flex: 1; 써도 같은 결과 */
 }
+.notice .inner__left .swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  height: 62px;
+}
+.notice .inner__left .swiper .swiper-slide a {
+  color: #fff;
+}
 .notice .inner__left .notice-more {
   width: 62px;
   height: 62px;
@@ -388,5 +396,4 @@ header .badges .badge {
   width: 30%;
   /* 방법2. flex를 사용하여 비율 나누기 */
   /* flex: 3; */
-
 }
