@@ -23,6 +23,14 @@ searchInputEl.addEventListener('blur', function () {
 // 스크롤 시 전역 배지(고정 배너) 숨기기
 const badgeEl = document.querySelector('header .badges');
 
+// 상단으로 이동 버튼 제어
+const toTopEl = document.querySelector('#to-top');
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, 0.6, {
+    scrollTo: 0 // 페이지의 0px 지점(최상단)으로 이동, ScrollToPlugin을 연결해야 사용 가능한 옵션
+  });
+});
+
 // window: 브라우저 창 객체
 window.addEventListener('scroll', function () {
   // console.log(window.scrollY); // y축으로 얼마나 스크롤 했는지에 대한 수치
@@ -38,6 +46,12 @@ window.addEventListener('scroll', function () {
       opacity: 0,
       display: 'none'
     });
+
+    // 상단으로 이동 버튼 보이기!
+    gsap.to(toTopEl, 0.6, {
+      opacity: 1,
+      x: 0 // x축 0px 지점으로 이동
+    });
   } else {
     // 배지 요소 보이기!
     // badgeEl.style.display = 'block';
@@ -45,6 +59,12 @@ window.addEventListener('scroll', function () {
     gsap.to(badgeEl, 0.6, {
       opacity: 1,
       display: 'block'
+    });
+
+    // 상단으로 이동 버튼 숨기기!
+    gsap.to(toTopEl, 0.6, {
+      opacity: 0,
+      x: 100 // x축 100px 지점으로 이동
     });
   }
 });
@@ -161,3 +181,8 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show') // 요소가 화면에 보이면 show 클래스 추가
     .addTo(new ScrollMagic.Controller()); // 컨트롤러에 장면을 할당(필수!) - 라이브러리에서 지정한 문법으로 깊게 이해X
 });
+
+// 현재 연도 표시
+// 날짜 정보를 가진 JS의 Date 객체를 활용
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear(); // 현재 연도의 정보가 숫자 데이터로 반환됨
